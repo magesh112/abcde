@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+  <label>Email Id:</label>
+  <input type="text" formControlName="email"><br>
+  <span style="color:red" *ngIf="email && email.invalid && email.touched"> email is required</span>
+  <span style="color:red" *ngIf="email.errors?.pattern">enter the valid email</span><br>
+  <label>Password:</label>
+  <input type="password" formControlName="password"><br>
+  <span style="color:red" *ngIf="password && password.invalid && password.touched">enter the password</span>
+  <span style="color:red;" *ngIf="password.errors?.minlength ">Min 6chracter</span><br>
+  <button (click)="submitFunction()">submit</button>
+</form>

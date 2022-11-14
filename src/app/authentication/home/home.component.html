@@ -1,0 +1,21 @@
+<form [formGroup]="newForm">
+  Emp.Name:<input type="text" formControlName="empname" /><br />
+  Emp.Id:<input type="text" formControlName="empid" /><br />
+  Ab/present:<input type="text" formControlName="abp" /><br />
+  <button (click)="addFunction()">Add</button>
+</form>
+<label>Search</label>
+<input type="text" placeholder="search here"[(ngModel)]="search" />
+<table>
+  <tr>
+    <th>Emp.Name</th>
+    <th>Emp.Id</th>
+    <th>Ab/present</th>
+  </tr>
+
+  <tr *ngFor="let data of value | filter:search,let i=index">
+    <td>{{ data.empname }}</td>
+    <td>{{ data.empid }}</td>
+    <td>{{ data.abp }}</td>
+  </tr>
+</table>
